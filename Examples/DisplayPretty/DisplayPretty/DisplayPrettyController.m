@@ -23,12 +23,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [_parser release];
-    [_writer release];
-    [super dealloc];
-}
 
 - (IBAction)formatText:(id)sender {
     id object = [_parser objectWithString:[_source stringValue]];

@@ -51,11 +51,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [_error release];
-    [_stream release];
-    [super dealloc];
-}
 
 - (void)appendData:(NSData *)data_ {
     [_stream appendData:data_];
@@ -166,7 +161,7 @@
                 return sbjson_token_string;
 
             } else {
-                acc = [[string mutableCopy] autorelease];
+                acc = [string mutableCopy];
             }
         }
         
